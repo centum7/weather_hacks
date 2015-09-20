@@ -4,6 +4,9 @@
 
     <!-- ネットワークアクセスを許可する -->
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
     <!-- Iconを設定 -->
     <application
         android:allowBackup="true"

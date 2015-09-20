@@ -2,7 +2,14 @@ package jp.co.aizu_student.weatherhacks.network;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v4.content.AsyncTaskLoader;
+
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.SocketException;
+import java.net.URL;
 
 
 /**
@@ -22,16 +29,38 @@ public class AsyncImageLoader extends AsyncTaskLoader<Bitmap> {
         /* ===HTTP通信を行い画像ファイルを取得===*/
         // Bitmapを宣言
 
+        Bitmap bmp = null;
+
         // URLを生成(例外発生の可能性アリ)
 
-        // HttpURLConnectionを生成
+        try {
+            URL url = new URL(this.url);
 
-        // 接続する
+            // HttpURLConnectionを生成
 
-        // BitmapFactoryでデコード
 
-        // 画像を返却
-        return null;
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            // 接続する
+
+            connection.connect();
+
+            // BitmapFactoryでデコード
+
+            bmp = BitmapFactory.decodeStream(connection.getInputStream());
+        } catch (MalformedURLException e){
+
+        }catch (SocketException e) {
+
+        } catch (IOException e) {
+
+        }
+
+
+
+            // 画像を返却
+            return bmp;
+
 
         /* ==================================*/
     }

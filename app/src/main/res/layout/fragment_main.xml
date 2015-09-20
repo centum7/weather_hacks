@@ -17,13 +17,66 @@
 
         <!-- 地域表示 -->
 
+        <TextView
+            android:id="@+id/pref_text"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:textSize="24sp"
+            android:text="会津若松"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
         <!-- 最高気温表示 -->
+
+
+        <TextView
+            android:id="@+id/max_temperature_text"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:textSize="24sp"
+            android:textColor="#FF0000"
+            android:layout_gravity="center"
+            tools:text="23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <!-- 最低気温表示 -->
 
+
+        <TextView
+            android:id="@+id/min_temperature_text"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:textSize="24sp"
+            android:textColor="#FF0000"
+            android:layout_gravity="center"
+            android:text="13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
         <!-- 天気画像表示 -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <jp.co.aizu_student.weatherhacks.views.adapters.AsyncLoaderImageView
+                android:layout_width="200dp"
+                android:id="@+id/weather_image"
+                android:layout_gravity="center"
+                android:layout_height="180dp" />
+
+        </FrameLayout>
 
         <!-- 天気表示 -->
+
+        <TextView
+            android:id="@+id/weather_text"
+            android:gravity="center"
+            android:textSize="80sp"
+            android:text="晴れ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
